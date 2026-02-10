@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>HVAC Terminal Summary Reports | Feb 9, 2026</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    .card { transition: all 0.2s ease; }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 12px 40px rgba(0,83,226,0.15); }
+    .glow { animation: glow 2s ease-in-out infinite alternate; }
+    @keyframes glow { from { box-shadow: 0 0 5px rgba(0,83,226,0.2); } to { box-shadow: 0 0 20px rgba(0,83,226,0.4); } }
+    .copy-btn { transition: all 0.15s ease; }
+    .copy-btn:active { transform: scale(0.95); }
+  </style>
+</head>
+<body class="bg-gray-50 text-gray-800 min-h-screen">
+
+  <!-- Header -->
+  <header class="bg-gradient-to-r from-[#0053e2] to-[#003da8] text-white py-10 px-4">
+    <div class="max-w-5xl mx-auto text-center">
+      <div class="text-5xl mb-3">&#x1F4CA;</div>
+      <h1 class="text-3xl md:text-4xl font-bold">HVAC Terminal Summary Reports</h1>
+      <p class="text-blue-200 mt-2 text-lg">Interactive Dashboards &amp; PDF Reports &mdash; February 9, 2026</p>
+      <div class="mt-6 inline-flex items-center gap-2 bg-white/10 rounded-full px-5 py-2.5 backdrop-blur">
+        <span class="text-sm">&#x1F517; Share this page:</span>
+        <code id="shareUrl" class="text-[#ffc220] font-mono text-sm"></code>
+        <button onclick="copyPageUrl()" id="copyBtn"
+                class="copy-btn bg-[#ffc220] text-gray-900 px-3 py-1 rounded-full text-xs font-bold hover:bg-yellow-300">
+          Copy Link
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main class="max-w-5xl mx-auto px-4 py-10">
+
+    <!-- Full Fleet Section -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-gray-900 mb-1 flex items-center gap-2">
+        <span class="bg-[#0053e2] text-white w-8 h-8 rounded-lg flex items-center justify-center text-sm">&#x1F3E2;</span>
+        Full Fleet Reports
+      </h2>
+      <p class="text-sm text-gray-500 mb-4">All Sr. Directors &bull; 10,087 terminal units &bull; 2,699 stores</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="HVAC_Dashboard_02092026.html" class="card block bg-white rounded-xl shadow-md p-6 border-l-4 border-[#0053e2] hover:border-[#ffc220]">
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="font-bold text-lg text-gray-900">Overview Dashboard</h3>
+              <p class="text-sm text-gray-500 mt-1">Executive summary, charts by Sr. Director, Director &amp; Regional Manager drill-downs</p>
+            </div>
+            <span class="text-3xl">&#x1F4CA;</span>
+          </div>
+          <div class="mt-4 flex gap-2">
+            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full font-semibold">Interactive</span>
+            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full font-semibold">Charts</span>
+            <span class="text-xs bg-purple-100 text-purple-800 px-2 py-1 rounded-full font-semibold">Search</span>
+          </div>
+        </a>
+        <a href="HVAC_Aging_Analysis_02092026.html" class="card block bg-white rounded-xl shadow-md p-6 border-l-4 border-[#ea1100] hover:border-[#ffc220]">
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="font-bold text-lg text-gray-900">Aging Analysis</h3>
+              <p class="text-sm text-gray-500 mt-1">Units 30+ days in terminal by aging bucket (365+, 180+, 90+, 60+, 30+) with unit-level detail</p>
+            </div>
+            <span class="text-3xl">&#x23F1;</span>
+          </div>
+          <div class="mt-4 flex gap-2">
+            <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full font-semibold">Critical</span>
+            <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full font-semibold">Aging Buckets</span>
+            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full font-semibold">Filterable</span>
+          </div>
+        </a>
+      </div>
+      <div class="mt-3 flex gap-3">
+        <a href="HVAC_Dashboard_02092026.pdf" class="text-sm text-gray-500 hover:text-[#0053e2] flex items-center gap-1">&#x1F4C4; Overview PDF</a>
+        <a href="HVAC_Aging_Analysis_02092026.pdf" class="text-sm text-gray-500 hover:text-[#0053e2] flex items-center gap-1">&#x1F4C4; Aging PDF</a>
+      </div>
+    </section>
+
+    <!-- Monique Brennan Section -->
+    <section class="mb-10">
+      <h2 class="text-xl font-bold text-gray-900 mb-1 flex items-center gap-2">
+        <span class="bg-[#ffc220] text-gray-900 w-8 h-8 rounded-lg flex items-center justify-center text-sm">&#x1F464;</span>
+        Monique Brennan &mdash; Sr. Director
+      </h2>
+      <p class="text-sm text-gray-500 mb-4">8 Directors &bull; 29 Regional Managers &bull; 1,436 terminal units</p>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <a href="HVAC_MB_Dashboard_02092026.html" class="card block bg-white rounded-xl shadow-md p-6 border-l-4 border-[#0053e2] hover:border-[#ffc220]">
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="font-bold text-lg text-gray-900">MB Overview Dashboard</h3>
+              <p class="text-sm text-gray-500 mt-1">Brennan region summary with Director &amp; RM breakdowns</p>
+            </div>
+            <span class="text-3xl">&#x1F4CA;</span>
+          </div>
+          <div class="mt-4 flex gap-2">
+            <span class="text-xs bg-blue-100 text-blue-800 px-2 py-1 rounded-full font-semibold">Interactive</span>
+            <span class="text-xs bg-green-100 text-green-800 px-2 py-1 rounded-full font-semibold">Charts</span>
+          </div>
+        </a>
+        <a href="HVAC_MB_Aging_02092026.html" class="card block bg-white rounded-xl shadow-md p-6 border-l-4 border-[#ea1100] hover:border-[#ffc220]">
+          <div class="flex items-start justify-between">
+            <div>
+              <h3 class="font-bold text-lg text-gray-900">MB Aging Analysis</h3>
+              <p class="text-sm text-gray-500 mt-1">Brennan region aging breakdown with unit-level detail tables</p>
+            </div>
+            <span class="text-3xl">&#x23F1;</span>
+          </div>
+          <div class="mt-4 flex gap-2">
+            <span class="text-xs bg-red-100 text-red-800 px-2 py-1 rounded-full font-semibold">Critical</span>
+            <span class="text-xs bg-orange-100 text-orange-800 px-2 py-1 rounded-full font-semibold">Aging Buckets</span>
+          </div>
+        </a>
+      </div>
+      <div class="mt-3 flex gap-3">
+        <a href="HVAC_MB_Dashboard_02092026.pdf" class="text-sm text-gray-500 hover:text-[#0053e2] flex items-center gap-1">&#x1F4C4; MB Overview PDF</a>
+        <a href="HVAC_MB_Aging_02092026.pdf" class="text-sm text-gray-500 hover:text-[#0053e2] flex items-center gap-1">&#x1F4C4; MB Aging PDF</a>
+      </div>
+    </section>
+
+    <!-- Share Instructions -->
+    <section class="bg-white rounded-xl shadow-md p-6 border border-gray-200">
+      <h2 class="text-lg font-bold text-gray-900 mb-3 flex items-center gap-2">&#x1F517; How to Share</h2>
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4 text-sm">
+        <div class="bg-blue-50 rounded-lg p-4">
+          <p class="font-semibold text-gray-900 mb-2">Share the Live Dashboard</p>
+          <ol class="list-decimal list-inside space-y-1 text-gray-600">
+            <li>Copy the link shown at the top of this page</li>
+            <li>Paste it into Teams, Slack, or email</li>
+            <li>Recipients on Walmart network can access instantly</li>
+          </ol>
+          <p class="mt-2 text-xs text-gray-400">Note: This link works while the server is running on your machine</p>
+        </div>
+        <div class="bg-yellow-50 rounded-lg p-4">
+          <p class="font-semibold text-gray-900 mb-2">Share via OneDrive (Permanent)</p>
+          <ol class="list-decimal list-inside space-y-1 text-gray-600">
+            <li>PDF versions are in your OneDrive Code Puppy folder</li>
+            <li>Right-click any file &rarr; Share &rarr; Copy link</li>
+            <li>Set to "People in Walmart" + "Can view"</li>
+          </ol>
+          <a href="https://my.wal-mart.com/personal/b0c0imv_homeoffice_wal-mart_com/_layouts/15/onedrive.aspx?id=%2Fpersonal%2Fb0c0imv%5Fhomeoffice%5Fwal%2Dmart%5Fcom%2FDocuments%2FCode%20Puppy"
+             target="_blank" class="inline-block mt-2 text-[#0053e2] font-semibold hover:underline text-xs">Open OneDrive Folder &rarr;</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="bg-gray-100 border-t py-4 text-center text-sm text-gray-500 mt-8">
+    <p>HVAC Terminal Summary Reports &bull; Generated by Code Puppy &#x1F436; &bull; Data as of Feb 9, 2026</p>
+  </footer>
+
+  <script>
+    const shareUrl = 'http://10.225.109.136:8091';
+    document.getElementById('shareUrl').textContent = shareUrl;
+
+    function copyPageUrl() {
+      const textarea = document.createElement('textarea');
+      textarea.value = shareUrl;
+      textarea.style.position = 'fixed';
+      textarea.style.left = '-9999px';
+      document.body.appendChild(textarea);
+      textarea.select();
+      try {
+        document.execCommand('copy');
+        showCopied('copyBtn');
+      } catch (e) {
+        prompt('Copy this link:', shareUrl);
+      }
+      document.body.removeChild(textarea);
+    }
+
+    function showCopied(btnId) {
+      const btn = document.getElementById(btnId);
+      const orig = btn.textContent;
+      btn.textContent = '\u2705 Copied!';
+      btn.classList.remove('bg-[#ffc220]');
+      btn.classList.add('bg-green-500', 'text-white');
+      setTimeout(() => {
+        btn.textContent = orig;
+        btn.classList.add('bg-[#ffc220]');
+        btn.classList.remove('bg-green-500', 'text-white');
+      }, 2000);
+    }
+  </script>
+</body>
+</html>
