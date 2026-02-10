@@ -4,3 +4,4 @@ create_links.ps1
 share_links.json
 *.pyc
 __pycache__/
+.gh_hvac_token  

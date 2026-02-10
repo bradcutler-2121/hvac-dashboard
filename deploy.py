@@ -6,6 +6,7 @@ import sys
 import urllib.request
 import urllib.error
 import ssl
+from pathlib import Path
 
 GIT = r'C:\Users\b0c0imv\.mingit\cmd\git.exe'
 REPO_DIR = r'C:\Users\b0c0imv\Documents\hvac-web'
@@ -15,11 +16,21 @@ PROXY = 'http://sysproxy.wal-mart.com:8080'
 ctx = ssl.create_default_context()
 
 
+TOKEN_FILE = Path(os.path.expanduser('~')) / '.gh_hvac_token'
+
+
 def get_token_gui():
-    """Prompt for PAT using a PowerShell input dialog."""
+    """Get PAT from cached file or prompt via GUI dialog."""
+    # Check for cached token
+    if TOKEN_FILE.exists():
+        token = TOKEN_FILE.read_text().strip()
+        if token:
+            print('  Using cached token.', flush=True)
+            return token
+
     ps_cmd = '''Add-Type -AssemblyName Microsoft.VisualBasic
 $token = [Microsoft.VisualBasic.Interaction]::InputBox(
-    "Paste your GitHub Personal Access Token (ghp_...):`n`nThis is used to push the dashboard, then cleared from memory.",
+    "Paste your GitHub Personal Access Token (ghp_...):`n`nThis will be cached for future pushes.",
     "GitHub Authentication",
     "")
 Write-Output $token'''
@@ -29,6 +40,8 @@ Write-Output $token'''
     if not token:
         print('No token provided. Cancelled.', flush=True)
         sys.exit(1)
+    # Cache it
+    TOKEN_FILE.write_text(token)
     return token
 
 
